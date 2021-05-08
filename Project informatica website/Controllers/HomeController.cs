@@ -27,6 +27,11 @@ namespace Project_informatica_website.Controllers
         {
             return View();
         }
+        [Route("Contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
