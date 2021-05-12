@@ -1,3 +1,16 @@
 ﻿header {
    background-color: #802000;
+   }
+body {
+    background-color: black;
+    background-image: url(../img/memphis-mini-dark.png)
+}
+.box {
+    background-image: url('../img/Background Main Page.jpg');
+    padding: 390px 200px;
+    margin: 10px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
