@@ -24,10 +24,10 @@ namespace Project_informatica_website.Controllers
         public IActionResult Index()
         {
             // alle namen ophalen
-            var Movie = GetMovies();
+            var Actor = GetActors();
 
             // stop de namen in de HTML
-            return View(model: Movie);
+            return View(model: Actor);
         }
         public List<string> GetNames()
         {
@@ -103,13 +103,13 @@ namespace Project_informatica_website.Controllers
             // return de lijst met movies
             return Movie;
         }
-        public List<Actors> GetActors()
+        public List<Actor> GetActors()
         {
             // stel in waar de database gevonden kan worden
             string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
-            List<Actors> Actors = new List<Actors>();
+            List<Actor> Actor = new List<Actor>();
 
             // verbinding maken met de database
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -118,7 +118,7 @@ namespace Project_informatica_website.Controllers
                 conn.Open();
 
                 // SQL query die we willen uitvoeren
-                MySqlCommand cmd = new MySqlCommand("select * from movie", conn);
+                MySqlCommand cmd = new MySqlCommand("select * from actor", conn);
 
                 // resultaat van de query lezen
                 using (var reader = cmd.ExecuteReader())
@@ -126,7 +126,7 @@ namespace Project_informatica_website.Controllers
                     // elke keer een regel (of eigenlijk: database rij) lezen
                     while (reader.Read())
                     {
-                        Actors m = new Actors
+                        Actor m = new Actor
                         {
                             // selecteer de kolommen die je wil lezen."
                             Actor_ID = reader["Actor_ID"].ToString(),
@@ -136,12 +136,12 @@ namespace Project_informatica_website.Controllers
 
                         };
                         // voeg movie toe aan de lijst
-                        Actors.Add(m);
+                        Actor.Add(m);
                     }
                 }
             }
             // return de lijst met movies
-            return Actors;
+            return Actor;
         }
 
         public IActionResult Privacy()
