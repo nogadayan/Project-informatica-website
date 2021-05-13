@@ -132,7 +132,7 @@ namespace Project_informatica_website.Controllers
                             Actor_ID = reader["Actor_ID"].ToString(),
                             Name = reader["Name"].ToString(),
                             Birth_Date = reader["Birth Date"].ToString(),
-                            Picture = (byte)reader["Picture"]
+                            File = reader["File"].ToString()
 
                         };
                         // voeg movie toe aan de lijst

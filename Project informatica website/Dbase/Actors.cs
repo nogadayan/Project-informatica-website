@@ -13,6 +13,6 @@ namespace Project_informatica_website.Dbase
 
         public string Birth_Date { get; set; }
 
-        public byte Picture { get; set; }
+        public string File { get; set; }
     }
 }
