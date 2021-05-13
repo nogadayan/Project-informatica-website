@@ -8,6 +8,7 @@ using MySql.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Project_informatica_website.Dbase;
 
 namespace Project_informatica_website.Controllers
 {
@@ -23,10 +24,10 @@ namespace Project_informatica_website.Controllers
         public IActionResult Index()
         {
             // alle namen ophalen
-            var names = GetNames();
+            var Movie = GetMovies();
 
             // stop de namen in de HTML
-            return View(names);
+            return View(model: Movie);
         }
         public List<string> GetNames()
         {
@@ -62,6 +63,46 @@ namespace Project_informatica_website.Controllers
 
             // return de lijst met namen
             return names;
+        }
+        public List<Movie> GetMovies()
+        {
+            // stel in waar de database gevonden kan worden
+            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+
+            // maak een lege lijst waar we de namen in gaan opslaan
+            List<Movie> Movie = new List<Movie>();
+
+            // verbinding maken met de database
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                // verbinding openen
+                conn.Open();
+
+                // SQL query die we willen uitvoeren
+                MySqlCommand cmd = new MySqlCommand("select * from movie", conn);
+
+                // resultaat van de query lezen
+                using (var reader = cmd.ExecuteReader())
+                {
+                    // elke keer een regel (of eigenlijk: database rij) lezen
+                    while (reader.Read())
+                    {
+                        Movie m = new Movie
+                        {
+                            // selecteer de kolommen die je wil lezen."
+                            IMDB = reader["IMDB"].ToString(),
+                            Title = reader["Title"].ToString(),
+                            Plot = reader["Plot"].ToString(),
+                            
+                        };
+                        // voeg movie toe aan de lijst
+                        Movie.Add(m);
+                    }
+                }
+            }
+
+            // return de lijst met movies
+            return Movie;
         }
         public IActionResult Privacy()
         {

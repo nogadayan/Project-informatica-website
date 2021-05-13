@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Project_informatica_website.Dbase;
+@model List<Movie>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -10,9 +12,9 @@
 <div class="box">
     @if (Model != null)
     {
-        @foreach(string naam in Model)
+        @foreach(Movie m in Model)
         {
-        <p>@naam</p>
+        <p style="color:white">@m.IMDB - @m.Title - @m.Plot</p>
         }
     }
 </div>
