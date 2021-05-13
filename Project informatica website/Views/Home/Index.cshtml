@@ -8,8 +8,11 @@
 
 </div>
 <div class="box">
-    @foreach(string naam in Model)
-     {
-    <p>@naam</p>
-     }
+    @if (Model != null)
+    {
+        @foreach(string naam in Model)
+        {
+        <p>@naam</p>
+        }
+    }
 </div>
