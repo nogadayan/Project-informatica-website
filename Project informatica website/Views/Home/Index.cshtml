@@ -3,7 +3,16 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<!-- Load an icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="navbar">
+    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+    <a href="#"><i class="fa fa-fw fa-film"></i> Movies</a>
+    <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+</div>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
@@ -12,14 +21,14 @@
 <div class="box">
     @if (Model != null)
     {
-    @foreach(Actor m in Model)
+        @foreach (Actor m in Model)
         {
-    <p style="color:white">@m.Actor_ID - @m.Name @m.Birth_Date-</p>
+            <p style="color:white">@m.Actor_ID - @m.Name @m.Birth_Date-</p>
 
-    <img src= "~/img/@m.File"
-         class="Border"
-         height="259" width="157"
-         asp-append-version="true" />
+            <img src="~/img/@m.File"
+                 class="Border"
+                 height="259" width="157"
+                 asp-append-version="true" />
         }
     }
 
