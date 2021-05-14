@@ -27,7 +27,7 @@ namespace Project_informatica_website.Controllers
             var Actor = GetActors();
 
             // stop de namen in de HTML
-            return View(model: Actor);
+            return View(Actor);
         }
         public List<string> GetNames()
         {
@@ -108,7 +108,7 @@ namespace Project_informatica_website.Controllers
             // stel in waar de database gevonden kan worden
             string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
-            // maak een lege lijst waar we de namen in gaan opslaan
+            // maak een lege lijst waar we de Actors in gaan opslaan
             List<Actor> Actor = new List<Actor>();
 
             // verbinding maken met de database
@@ -135,12 +135,12 @@ namespace Project_informatica_website.Controllers
                             File = reader["File"].ToString()
 
                         };
-                        // voeg movie toe aan de lijst
+                        // voeg actor toe aan de lijst
                         Actor.Add(m);
                     }
                 }
             }
-            // return de lijst met movies
+            // return de lijst met actors
             return Actor;
         }
 
