@@ -30,7 +30,7 @@
         <div class="row">
             @foreach (Movie m in Model)
             {
-                <div class="column nature">
+                <div class="column @m.Genre">
                     <div class="content">
                         <img src="~/img/@m.File_Movie" alt="Mountains" style="width:50%">
                         <h4>@m.IMDB</h4>
