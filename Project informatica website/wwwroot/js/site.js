@@ -34,7 +34,7 @@ function checkCookie() {
     } else {
         user = "Noga Dayan";
         if (user != "" && user != null) {
-            alert("Wij gebruiken Cookies voor een goed Website performance ");
+            alert("Wij gebruiken Cookies voor een goede Website performance ");
             setCookie("username", user, 1);
         }
     }
