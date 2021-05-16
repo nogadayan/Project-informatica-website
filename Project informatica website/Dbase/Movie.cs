@@ -11,6 +11,8 @@ namespace Project_informatica_website.Dbase
 
         public string Title { get; set; }
 
+        public string Genre { get; set; }
+
         public string Release_Date { get; set; }
 
         public string Plot { get; set; }

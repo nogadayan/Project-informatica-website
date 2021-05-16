@@ -98,6 +98,7 @@ namespace Project_informatica_website.Controllers
                             // selecteer de kolommen die je wil lezen."
                             IMDB = reader["IMDB"].ToString(),
                             Title = reader["Title"].ToString(),
+                            Genre = reader["Genre"].ToString(),
                             Plot = reader["Plot"].ToString(),
                             File_Movie = reader["File_Movie"].ToString(),
                         };
