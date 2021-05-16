@@ -62,6 +62,9 @@ h3 {
     }
 }
 /* voor moviespagin voorbeeld van https://www.w3schools.com/howto/howto_js_portfolio_filter.asp */
+* {
+    box-sizing: border-box;
+}
 .row {
   margin: 8px -16px;
 }
