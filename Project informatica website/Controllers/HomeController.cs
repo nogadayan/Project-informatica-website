@@ -99,6 +99,7 @@ namespace Project_informatica_website.Controllers
                             IMDB = reader["IMDB"].ToString(),
                             Title = reader["Title"].ToString(),
                             Plot = reader["Plot"].ToString(),
+                            File_Movie = reader["File_Movie"].ToString(),
                         };
                         // voeg movie toe aan de lijst
                         Movie.Add(m);
@@ -138,7 +139,7 @@ namespace Project_informatica_website.Controllers
                             Actor_ID = reader["Actor_ID"].ToString(),
                             Name = reader["Name"].ToString(),
                             Birth_Date = reader["Birth Date"].ToString(),
-                            File = reader["File"].ToString()
+                            File = reader["File"].ToString(),
 
                         };
                         // voeg actor toe aan de lijst
@@ -178,8 +179,7 @@ namespace Project_informatica_website.Controllers
                             Movie_Actors_ID = Convert.ToInt32(reader["Movie-Actors_ID"]),
                             IMDB = reader["IMDB"].ToString(),
                             Actor_ID = reader["Actor_ID"].ToString(),
-                            Role = reader["Role"].ToString()
-
+                            Role = reader["Role"].ToString(),                      
                         };
                         // voeg actor toe aan de lijst
                         movie_actors.Add(m);

@@ -15,6 +15,7 @@ namespace Project_informatica_website.Dbase
 
         public string Plot { get; set; }
 
-     
+        public string File_Movie { get; set; }
+
     }
 }
