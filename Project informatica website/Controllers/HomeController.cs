@@ -28,7 +28,10 @@ namespace Project_informatica_website.Controllers
 
             // stop de namen in de HTML
             return View(Actor);
-
+        }
+        [Route("Movies")]
+        public IActionResult Movies()
+        {
             var Movie = GetMovies();
             return View(Movie);
         }
