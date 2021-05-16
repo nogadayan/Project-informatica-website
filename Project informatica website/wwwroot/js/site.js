@@ -30,10 +30,11 @@ function getCookie(cname) {
 function checkCookie() {
     var user = getCookie("username");
     if (user != "") {
-        alert("Welcome again " + user);
+        // doe lekker niets! alert("Welcome again " + user);
     } else {
-        user = prompt("Please enter your name:", "");
+        user = "Noga Dayan";
         if (user != "" && user != null) {
+            alert("Wij gebruiken Cookies voor een goed Website performance ");
             setCookie("username", user, 1);
         }
     }
