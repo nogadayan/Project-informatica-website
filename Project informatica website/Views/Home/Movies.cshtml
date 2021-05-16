@@ -1,5 +1,5 @@
 ﻿@using Project_informatica_website.Dbase;
-@model List<Actor>
+@model List<Movie>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -11,9 +11,9 @@
 <div class="box">
     @if (Model != null)
     {
-        @foreach (Actor m in Model)
+        @foreach (Movie m in Model)
         {
-            <p style="color:white">@m.Actor_ID - @m.Name @m.Birth_Date-</p>
+            <p style="color:white">@m.IMDB - @m.Title @m.Plot-</p>
 
             <img src="~/img/@m.File"
                  class="Border"

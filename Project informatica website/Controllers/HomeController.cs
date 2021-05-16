@@ -143,7 +143,46 @@ namespace Project_informatica_website.Controllers
             // return de lijst met actors
             return Actor;
         }
+        public List<movie_actors> Getmovie_actors()
+        {
+            // stel in waar de database gevonden kan worden
+            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
+            // maak een lege lijst waar we de Actors in gaan opslaan
+            List<movie_actors> movie_actors = new List<movie_actors>();
+
+            // verbinding maken met de database
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                // verbinding openen
+                conn.Open();
+
+                // SQL query die we willen uitvoeren
+                MySqlCommand cmd = new MySqlCommand("select * from movie-actors", conn);
+
+                // resultaat van de query lezen
+                using (var reader = cmd.ExecuteReader())
+                {
+                    // elke keer een regel (of eigenlijk: database rij) lezen
+                    while (reader.Read())
+                    {
+                        movie_actors m = new movie_actors
+                        {
+                            // selecteer de kolommen die je wil lezen."
+                            Movie_Actors_ID = Convert.ToInt32(reader["Movie-Actors_ID"]),
+                            IMDB = reader["IMDB"].ToString(),
+                            Actor_ID = reader["Actor_ID"].ToString(),
+                            Role = reader["Role"].ToString()
+
+                        };
+                        // voeg actor toe aan de lijst
+                        movie_actors.Add(m);
+                    }
+                }
+            }
+            // return de lijst met actors
+            return movie_actors;
+        }
         public IActionResult Privacy()
         {
             return View();
