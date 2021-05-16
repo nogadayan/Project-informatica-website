@@ -28,6 +28,9 @@ namespace Project_informatica_website.Controllers
 
             // stop de namen in de HTML
             return View(Actor);
+
+            var Movie = GetMovies();
+            return View(Movie);
         }
         public List<string> GetNames()
         {
