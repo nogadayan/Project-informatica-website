@@ -33,6 +33,7 @@ namespace Project_informatica_website.Controllers
             // stop de namen in de HTML
             return View(Actor);
         }
+        [Route("Login")]
         public IActionResult Login(string username, string password)
         {
             // if (password == "geheim")
