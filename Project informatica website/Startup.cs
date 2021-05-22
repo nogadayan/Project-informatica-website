@@ -28,7 +28,8 @@ namespace Project_informatica_website
             services.AddSession(options =>
             {
             options.Cookie.Name = "MyCookie";
-            options.IdleTimeout = TimeSpan.FromSeconds(10);
+            // Cookie valid for a day
+            options.IdleTimeout = TimeSpan.FromSeconds(24*60*60);
             options.Cookie.IsEssential = true;
             });
 
