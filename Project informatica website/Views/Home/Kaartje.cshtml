@@ -1,4 +1,5 @@
-﻿@model MoviefromAPI
+﻿@using Project_informatica_website.Dbase;
+@model MoviefromAPI
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -12,7 +13,7 @@
         Kaartje:
     </h2>
     <p style="text-align: left;">
-
+        <h1 class="display-4">@Model.ImdbRating</h1>
     </p>
 </body>
 </html>

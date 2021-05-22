@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Project_informatica_website.Dbase;
 using Microsoft.AspNetCore.Http;
+using System.Net;
+using System.IO;
+using System.Text.Json;
 
 namespace Project_informatica_website.Controllers
 {
