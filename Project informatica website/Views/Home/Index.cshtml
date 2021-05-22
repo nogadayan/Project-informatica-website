@@ -12,9 +12,14 @@
 </body>
 <div class="text-center">
     <!-- display user from Cookie -->
-    <h1 class="display-4">Welcome, @ViewData["user"]</h1>
-
-
+    @if (@ViewData["user"] != null)
+    {
+        <h1 class="display-4">Welcome, @ViewData["user"]</h1>
+    }
+    @if (@ViewData["user"] == null)
+    {
+        <h1 class="display-4">Welcome, please Login</h1>
+    }
 </div>
 <div class="box">
     @if (Model != null)
