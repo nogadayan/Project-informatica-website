@@ -36,12 +36,12 @@ namespace Project_informatica_website.Controllers
         [Route("Login")]
         public IActionResult Login(string username, string password)
         {
-            // if (password == "geheim")
-            // {
+            if (username != null)
+            {
                 HttpContext.Session.SetString("User", username);
-                HttpContext.Session.SetString("password", password);
-            return Redirect("/");
-            // }
+                // HttpContext.Session.SetString("password", password);
+                return Redirect("/");
+            }
 
             return View();
         }
