@@ -33,13 +33,45 @@ namespace Project_informatica_website.Controllers
             // stop de namen in de HTML
             return View(Actor);
         }
+        [Route("Kaartje")]
+        public IActionResult Kaartje()
+        {
+            // https://www.omdbapi.com/
+            string apiKey = "43e5c6f2";
+            string url = "http://www.omdbapi.com/?i=tt3896198&apikey=" + apiKey;
+
+            // Created movie for our model object
+            Movie m;
+
+            // Create a request for the URL. 		
+            WebRequest request = WebRequest.Create(url);
+
+            // Get the response.
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            // Get the stream containing content returned by the server.
+            using (Stream dataStream = response.GetResponseStream())
+            {
+                // Open the stream using a StreamReader for easy access.
+                using (StreamReader reader = new StreamReader(dataStream))
+                {
+                    // Read the content.
+                    string responseFromServer = reader.ReadToEnd();
+
+                    // deserialize json response to movie object
+                    m = JsonSerializer.Deserialize<Movie>(responseFromServer);
+                }
+            }
+
+            return View(m);
+        }
         [Route("Login")]
         public IActionResult Login(string username, string password)
         {
             if (username != null)
             {
                 HttpContext.Session.SetString("User", username);
-                // HttpContext.Session.SetString("password", password);
+                HttpContext.Session.SetString("password", password);
                 return Redirect("/");
             }
 
