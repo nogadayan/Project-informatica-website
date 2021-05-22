@@ -36,12 +36,12 @@ namespace Project_informatica_website.Controllers
             // stop de namen in de HTML
             return View(Actor);
         }
-        [Route("Kaartje")]
-        public IActionResult Kaartje()
+        [Route("Kaartje/{id}")]
+        public IActionResult Kaartje(string id)
         {
             // https://www.omdbapi.com/
             string apiKey = "43e5c6f2";
-            string url = "http://www.omdbapi.com/?i=tt3896198&apikey=" + apiKey;
+            string url = "http://www.omdbapi.com/?i=" + id + "&apikey=" + apiKey;
 
             // Created movie for our model object
             MoviefromAPI m;
