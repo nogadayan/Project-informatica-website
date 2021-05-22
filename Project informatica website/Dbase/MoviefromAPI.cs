@@ -12,6 +12,6 @@ namespace Project_informatica_website.Dbase
         public string Director { get; set; }
         public string Plot { get; set; }
         public string Actors { get; set; }
-        public string ImdbRating { get; set; }
+        public string imdbRating { get; set; }
     }
 }
