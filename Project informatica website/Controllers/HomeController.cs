@@ -44,7 +44,7 @@ namespace Project_informatica_website.Controllers
             string url = "http://www.omdbapi.com/?i=tt3896198&apikey=" + apiKey;
 
             // Created movie for our model object
-            Movie m;
+            MoviefromAPI m;
 
             // Create a request for the URL. 		
             WebRequest request = WebRequest.Create(url);
@@ -62,7 +62,7 @@ namespace Project_informatica_website.Controllers
                     string responseFromServer = reader.ReadToEnd();
 
                     // deserialize json response to movie object
-                    m = JsonSerializer.Deserialize<Movie>(responseFromServer);
+                    m = JsonSerializer.Deserialize<MoviefromAPI>(responseFromServer);
                 }
             }
 
