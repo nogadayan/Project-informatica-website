@@ -22,6 +22,7 @@ namespace Project_informatica_website
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // use of Cookies
             services.AddDistributedMemoryCache();
 
             services.AddSession(options =>
@@ -50,6 +51,8 @@ namespace Project_informatica_website
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
