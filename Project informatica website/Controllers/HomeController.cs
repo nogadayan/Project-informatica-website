@@ -33,6 +33,17 @@ namespace Project_informatica_website.Controllers
             // stop de namen in de HTML
             return View(Actor);
         }
+        public IActionResult Login(string username, string password)
+        {
+            // if (password == "geheim")
+            // {
+                HttpContext.Session.SetString("User", username);
+                HttpContext.Session.SetString("password", password);
+            return Redirect("/");
+            // }
+
+            return View();
+        }
         [Route("Movies")]
         public IActionResult Movies()
         {
