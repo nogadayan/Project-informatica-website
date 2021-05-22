@@ -23,6 +23,9 @@ namespace Project_informatica_website.Controllers
 
         public IActionResult Index()
         {
+            // haal de User uit Cookie
+            ViewData["user"] = HttpContext.Session.GetString("User");
+
             // alle namen ophalen
             var Actor = GetActors();
 
