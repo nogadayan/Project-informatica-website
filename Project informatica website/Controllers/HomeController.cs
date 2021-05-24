@@ -65,7 +65,10 @@ namespace Project_informatica_website.Controllers
                     m = JsonSerializer.Deserialize<MoviefromAPI>(responseFromServer);
                 }
             }
-
+            List<Actor> actors = GetActors();
+            ViewData["actors"] = actors;
+            List<Movie> movies = GetMovies();
+            ViewData["movies"] = movies;
             return View(m);
         }
         [Route("Login")]
