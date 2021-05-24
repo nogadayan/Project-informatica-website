@@ -69,6 +69,8 @@ namespace Project_informatica_website.Controllers
             ViewData["actors"] = actors;
             List<Movie> movies = GetMovies(id);
             ViewData["movies"] = movies;
+            List<Movie_actors> movie_actors = GetMovie_Actors(id);
+            ViewData["movie_actors"] = movie_actors;
             return View(m);
         }
         [Route("Login")]

@@ -4,6 +4,7 @@
     ViewData["Title"] = "Home Page";
     List<Actor> actors = ViewData["actors"] as List<Actor>;
     List<Movie> movies = ViewData["movies"] as List<Movie>;
+    List<Movie_actors> movie_actors = ViewData["movie_actors"] as List<Movie_actors>;
 }
 <!DOCTYPE html>
 <html>
@@ -21,21 +22,30 @@
             {
                 <img src="~/img/@movie.File_Movie" alt="Mountains" style="height:500px">
 
+            }
         }
-    }
         <!-- <img src="~/img/Model.File_Movie" alt="Mountains" style="height:500px"> -->
         <h1>Title      : @Model.Title</h1>
         <h1>Plot        :@Model.Plot</h1>
         <h1>IMDB Rating: @Model.imdbRating</h1>
-        </p>
-        @if (actors != null)
+    </p>
+    <h1>ACTORS:</h1>
+    @if (actors != null)
+    {
+        foreach (var actor in actors)
         {
-            foreach (var actor in actors)
-            {
-                <p>@actor.Name @actor.Birth_Date</p>
+            <p>@actor.Name @actor.Birth_Date</p>
 
-            }
         }
+    }
+    <h1>MOVIE ACTORS:</h1>
+    @if (movie_actors != null)
+    {
+        foreach (var movie_actor in movie_actors)
+        {
+            <p>@movie_actor.Actor_ID @movie_actor.Role</p>
 
-    </body>
+        }
+    }
+</body>
 </html>
