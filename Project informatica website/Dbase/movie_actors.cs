@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Project_informatica_website.Dbase
 {
-    public class movie_actors
+    public class Movie_actors
     {
         public int Movie_Actors_ID { get; set; }
 
