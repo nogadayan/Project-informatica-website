@@ -274,7 +274,7 @@ namespace Project_informatica_website.Controllers
                 }
                 if (imdb_ma != null)
                 {
-                    MySqlCommand cmd = new MySqlCommand("select * from movie-actors", conn); // where IMDB = '" + imdb_ma + "'", conn);
+                    MySqlCommand cmd = new MySqlCommand("select * from movie-actors where IMDB = '" + imdb_ma + "'", conn);
                     using (var reader = cmd.ExecuteReader())
                     {
                         // elke keer een regel (of eigenlijk: database rij) lezen
