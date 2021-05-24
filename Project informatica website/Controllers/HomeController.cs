@@ -67,7 +67,7 @@ namespace Project_informatica_website.Controllers
             }
             List<Actor> actors = GetActors();
             ViewData["actors"] = actors;
-            List<Movie> movies = GetMovies(null);
+            List<Movie> movies = GetMovies(id);
             ViewData["movies"] = movies;
             return View(m);
         }
