@@ -253,7 +253,7 @@ namespace Project_informatica_website.Controllers
                 // SQL query die we willen uitvoeren
                 if (imdb_ma == null)
                 {
-                    MySqlCommand cmd = new MySqlCommand("select * from movie-actors", conn);
+                    MySqlCommand cmd = new MySqlCommand("select * from movie_actors", conn);
                     using (var reader = cmd.ExecuteReader())
                     {
                         // elke keer een regel (of eigenlijk: database rij) lezen
@@ -274,7 +274,7 @@ namespace Project_informatica_website.Controllers
                 }
                 if (imdb_ma != null)
                 {
-                    MySqlCommand cmd = new MySqlCommand("select * from movie-actors where IMDB = '" + imdb_ma + "'", conn);
+                    MySqlCommand cmd = new MySqlCommand("select * from movie_actors where IMDB = '" + imdb_ma + "'", conn);
                     using (var reader = cmd.ExecuteReader())
                     {
                         // elke keer een regel (of eigenlijk: database rij) lezen
