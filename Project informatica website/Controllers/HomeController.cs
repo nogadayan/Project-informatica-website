@@ -167,7 +167,7 @@ namespace Project_informatica_website.Controllers
                 }
                 if (imdb_tt != null)
                 {
-                    MySqlCommand cmd = new MySqlCommand("select * from movie where IMDB ="+imdb_tt, conn);
+                    MySqlCommand cmd = new MySqlCommand("select * from movie where IMDB = '" + imdb_tt +"'", conn);
                     using (var reader = cmd.ExecuteReader())
                     {
                         // elke keer een regel (of eigenlijk: database rij) lezen
