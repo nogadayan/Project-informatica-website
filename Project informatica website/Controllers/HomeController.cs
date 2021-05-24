@@ -67,7 +67,7 @@ namespace Project_informatica_website.Controllers
             }
             List<Actor> actors = GetActors();
             ViewData["actors"] = actors;
-            List<Movie> movies = GetMovies();
+            List<Movie> movies = GetMovies(null);
             ViewData["movies"] = movies;
             return View(m);
         }
@@ -86,7 +86,7 @@ namespace Project_informatica_website.Controllers
         [Route("Movies")]
         public IActionResult Movies()
         {
-            var Movie = GetMovies();
+            var Movie = GetMovies(null);
 
             List<Actor> actors = GetActors();
             ViewData["actors"] = actors;
@@ -128,7 +128,7 @@ namespace Project_informatica_website.Controllers
             // return de lijst met namen
             return names;
         }
-        public List<Movie> GetMovies()
+        public List<Movie> GetMovies(string imdb_tt)
         {
             // stel in waar de database gevonden kan worden
             string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
@@ -143,27 +143,52 @@ namespace Project_informatica_website.Controllers
                 conn.Open();
 
                 // SQL query die we willen uitvoeren
-                MySqlCommand cmd = new MySqlCommand("select * from movie", conn);
-
-                // resultaat van de query lezen
-                using (var reader = cmd.ExecuteReader())
+                if (imdb_tt == null)
                 {
-                    // elke keer een regel (of eigenlijk: database rij) lezen
-                    while (reader.Read())
+                    MySqlCommand cmd = new MySqlCommand("select * from movie", conn);
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        Movie m = new Movie
+                        // elke keer een regel (of eigenlijk: database rij) lezen
+                        while (reader.Read())
                         {
-                            // selecteer de kolommen die je wil lezen."
-                            IMDB = reader["IMDB"].ToString(),
-                            Title = reader["Title"].ToString(),
-                            Genre = reader["Genre"].ToString(),
-                            Plot = reader["Plot"].ToString(),
-                            File_Movie = reader["File_Movie"].ToString(),
-                        };
-                        // voeg movie toe aan de lijst
-                        Movie.Add(m);
+                            Movie m = new Movie
+                            {
+                                // selecteer de kolommen die je wil lezen."
+                                IMDB = reader["IMDB"].ToString(),
+                                Title = reader["Title"].ToString(),
+                                Genre = reader["Genre"].ToString(),
+                                Plot = reader["Plot"].ToString(),
+                                File_Movie = reader["File_Movie"].ToString(),
+                            };
+                            // voeg movie toe aan de lijst
+                            Movie.Add(m);
+                        }
                     }
                 }
+                if (imdb_tt != null)
+                {
+                    MySqlCommand cmd = new MySqlCommand("select * from movie where IMDB ="+imdb_tt, conn);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        // elke keer een regel (of eigenlijk: database rij) lezen
+                        while (reader.Read())
+                        {
+                            Movie m = new Movie
+                            {
+                                // selecteer de kolommen die je wil lezen."
+                                IMDB = reader["IMDB"].ToString(),
+                                Title = reader["Title"].ToString(),
+                                Genre = reader["Genre"].ToString(),
+                                Plot = reader["Plot"].ToString(),
+                                File_Movie = reader["File_Movie"].ToString(),
+                            };
+                            // voeg movie toe aan de lijst
+                            Movie.Add(m);
+                        }
+                    }
+                }
+                // resultaat van de query lezen
+
             }
 
             // return de lijst met movies

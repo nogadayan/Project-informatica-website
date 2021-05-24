@@ -19,6 +19,7 @@
         <h1>Title      : @Model.Title</h1>
         <h1>Plot        :@Model.Plot</h1>
         <h1>IMDB Rating: @Model.imdbRating</h1>
+    </p>
         @if (actors != null)
         {
             foreach (var actor in actors)
@@ -27,6 +28,14 @@
 
             }
         }
-        </p>
+        @if (movies != null)
+        {
+            foreach (var movie in movies)
+            {
+                <p>@movie.Title</p>
+
+            }
+        }
+        
     </body>
 </html>
