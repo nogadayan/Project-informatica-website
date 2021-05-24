@@ -84,6 +84,10 @@ namespace Project_informatica_website.Controllers
         public IActionResult Movies()
         {
             var Movie = GetMovies();
+
+            List<Actor> actors = GetActors();
+            ViewData["actors"] = actors;
+
             return View(Movie);
         }
         public List<string> GetNames()
