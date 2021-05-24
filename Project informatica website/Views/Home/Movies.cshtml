@@ -2,6 +2,7 @@
 @model List<Movie>
 @{
     ViewData["Title"] = "Home Page";
+    List<Actor> actors = ViewData["actors"] as List<Actor>;
 }
 <head>
     <script type="text/javascript" src='~/js/site.js'></script>
@@ -10,7 +11,13 @@
 
     <div class="text-center">
         <h1 class="display-4">Welcome</h1>
-
+        @if (actors != null)
+        {
+            foreach(var actor in actors)
+                {
+                    <p>@actor.Name</p>
+                }
+        }
 
     </div>
 
