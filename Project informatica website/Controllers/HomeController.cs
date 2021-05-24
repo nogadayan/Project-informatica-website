@@ -65,12 +65,24 @@ namespace Project_informatica_website.Controllers
                     m = JsonSerializer.Deserialize<MoviefromAPI>(responseFromServer);
                 }
             }
-            List<Actor> actors = GetActors();
-            ViewData["actors"] = actors;
+            //
+            // Haal de movie op die via id geselecteerd is
+            //
             List<Movie> movies = GetMovies(id);
             ViewData["movies"] = movies;
+            //
+            // Haal nu de Actors_ID en Rol op van de Actors die bij de film horen
+            //
             List<Movie_actors> movie_actors = GetMovie_Actors(id);
             ViewData["movie_actors"] = movie_actors;
+            //
+            // Nog afmaken Haal nu de Actors op die in de lijst Movie_Actors zitten
+            //
+            List<Actor> actors = GetActors();
+            ViewData["actors"] = actors;
+            //
+            // en weer terug
+            //
             return View(m);
         }
         [Route("Login")]
