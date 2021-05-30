@@ -382,8 +382,11 @@ namespace Project_informatica_website.Controllers
             return View();
         }
         [Route("Contact")]
-        public IActionResult Contact()
+        public IActionResult Contact(string voornaam, string achternaam)
         {
+            ViewData["voornaam"] = voornaam;
+            ViewData["achternaam"] = achternaam;
+
             return View();
         }
 
