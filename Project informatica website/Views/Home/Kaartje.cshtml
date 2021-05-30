@@ -20,14 +20,13 @@
         {
             foreach (var movie in movies)
             {
-                <img src="~/img/@movie.File_Movie" alt="Mountains" style="height:500px">
+                <img src="~/img/@movie.File_Movie" style="height:500px">
 
             }
         }
-        <!-- <img src="~/img/Model.File_Movie" alt="Mountains" style="height:500px"> -->
-        <h1>Title      : @Model.Title</h1>
-        <h1>Plot        :@Model.Plot</h1>
-        <h1>IMDB Rating: @Model.imdbRating</h1>
+    <p>Title      : @Model.Title</p>
+    <p>Plot        :@Model.Plot</p>
+    <p>IMDB Rating: @Model.imdbRating</p>
     </p>
     <h1>ACTORS:</h1>
     @if (actors != null)
@@ -35,9 +34,11 @@
         foreach (var actor in actors)
         {
             <img src="~/img/@actor.File" style="height:200px">
+
             <p>@actor.Name @actor.Birth_Date</p>
 
         }
     }
+
 </body>
 </html>

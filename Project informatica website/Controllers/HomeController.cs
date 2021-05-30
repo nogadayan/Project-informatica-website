@@ -93,11 +93,13 @@ namespace Project_informatica_website.Controllers
                     {
                         //List<Actor> tempactors = new List<Actor>();
                         List<Actor> tempactors = GetActors(movie_actor.Actor_ID);
-                        foreach (var temp2actors in tempactors)
+                        if (tempactors != null)
                         {
-                            actors1.Add(new Actor() { File = temp2actors.File });
-                            actors1.Add(new Actor() { Name = temp2actors.Name });
-                            actors1.Add(new Actor() { Birth_Date = temp2actors.Birth_Date });
+                        foreach (var temp2actors in tempactors)
+                            {
+                                // nog te doen tijd uit de Birth_Date halen
+                                actors1.Add(new Actor() { File = temp2actors.File, Name = temp2actors.Name, Birth_Date = temp2actors.Birth_Date });
+                            }
                         }
 
                     }
