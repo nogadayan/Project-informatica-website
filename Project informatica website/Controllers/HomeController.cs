@@ -82,8 +82,14 @@ namespace Project_informatica_website.Controllers
             //
             // Nog afmaken Haal nu de Actors op die in de lijst Movie_Actors zitten
             //
-            List<Actor> actors = GetActors();
-            ViewData["actors"] = actors;
+            // Van elke movie_actors genereer de actors
+            //
+            if (movie_actors != null)
+                {
+                    List<Actor> actors = GetActors();
+                    ViewData["actors"] = actors;
+            }
+            
             //
             // en weer terug
             //
@@ -212,40 +218,43 @@ namespace Project_informatica_website.Controllers
             // return de lijst met movies
             return Movie;
         }
-        public List<Actor> GetActors()
+        public List<Actor> GetActors(string imdb_nm)
         {
             // stel in waar de database gevonden kan worden
             string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de Actors in gaan opslaan
-            List<Actor> Actor = new List<Actor>();
+            if (imdb_nm != null)
+            { 
+                List<Actor> Actor = new List<Actor>();
 
-            // verbinding maken met de database
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                // verbinding openen
-                conn.Open();
-
-                // SQL query die we willen uitvoeren
-                MySqlCommand cmd = new MySqlCommand("select * from actor", conn);
-
-                // resultaat van de query lezen
-                using (var reader = cmd.ExecuteReader())
+                // verbinding maken met de database
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
-                    // elke keer een regel (of eigenlijk: database rij) lezen
-                    while (reader.Read())
-                    {
-                        Actor m = new Actor
-                        {
-                            // selecteer de kolommen die je wil lezen."
-                            Actor_ID = reader["Actor_ID"].ToString(),
-                            Name = reader["Name"].ToString(),
-                            Birth_Date = reader["Birth Date"].ToString(),
-                            File = reader["File"].ToString(),
+                    // verbinding openen
+                    conn.Open();
 
-                        };
-                        // voeg actor toe aan de lijst
-                        Actor.Add(m);
+                    // SQL query die we willen uitvoeren
+                    MySqlCommand cmd = new MySqlCommand("select * from actor", conn);
+
+                    // resultaat van de query lezen
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        // elke keer een regel (of eigenlijk: database rij) lezen
+                        while (reader.Read())
+                        {
+                            Actor m = new Actor
+                            {
+                                // selecteer de kolommen die je wil lezen."
+                                Actor_ID = reader["Actor_ID"].ToString(),
+                                Name = reader["Name"].ToString(),
+                                Birth_Date = reader["Birth Date"].ToString(),
+                                File = reader["File"].ToString(),
+
+                            };
+                            // voeg actor toe aan de lijst
+                            Actor.Add(m);
+                        }
                     }
                 }
             }
