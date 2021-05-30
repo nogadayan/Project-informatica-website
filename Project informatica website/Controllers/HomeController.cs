@@ -40,6 +40,10 @@ namespace Project_informatica_website.Controllers
         public IActionResult Kaartje(string id)
         {
             // https://www.omdbapi.com/
+            // Website gebruikt om infformatie over de movie te halen
+            //
+            // apiKey aangevraagd bij www.omdapi.com
+            //
             string apiKey = "43e5c6f2";
             string url = "http://www.omdbapi.com/?i=" + id + "&apikey=" + apiKey;
 
