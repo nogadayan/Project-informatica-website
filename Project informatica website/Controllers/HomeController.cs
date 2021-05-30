@@ -31,7 +31,7 @@ namespace Project_informatica_website.Controllers
             ViewData["user"] = HttpContext.Session.GetString("User");
 
             // alle namen ophalen
-            var Actor = GetActors();
+            var Actor = GetActors(null);
 
             // stop de namen in de HTML
             return View(Actor);
@@ -86,7 +86,7 @@ namespace Project_informatica_website.Controllers
             //
             if (movie_actors != null)
                 {
-                    List<Actor> actors = GetActors();
+                    List<Actor> actors = GetActors(null);
                     ViewData["actors"] = actors;
             }
             
@@ -112,7 +112,7 @@ namespace Project_informatica_website.Controllers
         {
             var Movie = GetMovies(null);
 
-            List<Actor> actors = GetActors();
+            List<Actor> actors = GetActors(null);
             ViewData["actors"] = actors;
 
             return View(Movie);
@@ -224,7 +224,7 @@ namespace Project_informatica_website.Controllers
             string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de Actors in gaan opslaan
-            if (imdb_nm != null)
+            if (imdb_nm == null)
             { 
                 List<Actor> Actor = new List<Actor>();
 
@@ -257,9 +257,10 @@ namespace Project_informatica_website.Controllers
                         }
                     }
                 }
+                // return de lijst met actors
+                return Actor;
             }
-            // return de lijst met actors
-            return Actor;
+            return null;           
         }
         public List<Movie_actors> GetMovie_Actors(string imdb_ma)
         {
