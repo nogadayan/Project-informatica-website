@@ -34,16 +34,8 @@
     {
         foreach (var actor in actors)
         {
-            <p>@actor.Name @actor.Birth_Date @actor.File</p>
-
-        }
-    }
-    <h1>MOVIE ACTORS:</h1>
-    @if (movie_actors != null)
-    {
-        foreach (var movie_actor in movie_actors)
-        {
-            <p>@movie_actor.Actor_ID @movie_actor.Role</p>
+            <img src="~/img/@actor.File" style="height:200px">
+            <p>@actor.Name @actor.Birth_Date</p>
 
         }
     }
