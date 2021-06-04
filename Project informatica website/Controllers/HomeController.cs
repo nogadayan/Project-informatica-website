@@ -211,7 +211,7 @@ namespace Project_informatica_website.Controllers
         public List<Actor> GetActors()
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de Actors in gaan opslaan
             List<Actor> Actor = new List<Actor>();
@@ -315,10 +315,10 @@ namespace Project_informatica_website.Controllers
             return View();
         }
         [Route("Contact")]
-        public IActionResult Contact(string voornaam, string achternaam)
+        public IActionResult Contact(string firstname, string lastname)
         {
-            ViewData["voornaam"] = voornaam;
-            ViewData["achternaam"] = achternaam;
+            ViewData["firstname"] = firstname;
+            ViewData["lastname"] = lastname;
 
             return View();
         }
