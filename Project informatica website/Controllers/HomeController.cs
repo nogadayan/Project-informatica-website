@@ -145,7 +145,7 @@ namespace Project_informatica_website.Controllers
         public List<Movie> GetMovies(string imdb_tt)
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Movie> Movie = new List<Movie>();
