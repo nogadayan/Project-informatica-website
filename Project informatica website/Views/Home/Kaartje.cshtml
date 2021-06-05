@@ -6,46 +6,51 @@
     List<Movie> movies = ViewData["movies"] as List<Movie>;
     List<Movie_actors> movie_actors = ViewData["Movie_actors"] as List<Movie_actors>;
 }
-<!DOCTYPE html>
-<html>
 <head>
-    <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src='~/js/site.js'></script>
+    <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
-    <h2 style="text-align: left;">
-        Kaartje:
-    </h2>
-    <p style="text-align: left;">
-        @if (movies != null)
-        {
-            foreach (var movie in movies)
+    <div class="main">
+        <h2 style="text-align: left;">
+            Kaartje:
+        </h2>
+        <p style="text-align: left;">
+            @if (movies != null)
             {
-                <img src="~/img/@movie.File_Movie" alt="Mountains" style="height:500px">
+                foreach (var movie in movies)
+                {
+                    <img src="~/img/@movie.File_Movie" style="height:500px">
 
+                }
             }
-        }
-        <!-- <img src="~/img/Model.File_Movie" alt="Mountains" style="height:500px"> -->
-        <h1>Title      : @Model.Title</h1>
-        <h1>Plot        :@Model.Plot</h1>
-        <h1>IMDB Rating: @Model.imdbRating</h1>
-    </p>
-    <h1>ACTORS:</h1>
-    @if (actors != null)
-    {
-        foreach (var actor in actors)
-        {
-            <p>@actor.Name @actor.Birth_Date @actor.File</p>
+        <p>Title      : @Model.Title</p>
+        <p>Plot       : @Model.Plot</p>
+        <p>IMDB Rating: @Model.imdbRating</p>
 
-        }
-    }
-    <h1>MOVIE ACTORS:</h1>
-    @if (movie_actors != null)
-    {
-        foreach (var movie_actor in movie_actors)
+        <h1>ACTORS:</h1>
+        @if (actors != null)
         {
-            <p>@movie_actor.Actor_ID @movie_actor.Role</p>
+            <div class="row">
+                @foreach (var actor in actors)
+                {
+                //
+                // Plaats de Actors in Tabel
+                //
+                <div class="column @actor.Name">
+                    <div class="content">
+                        <img src="~/img/@actor.File" alt="Mountains" style="height:200px">
+                        <h4 style="color:black">@actor.Name</h4>
+                        <p style="color:black">@actor.Birth_Date</p>
+                    </div>
+                </div>
+                }
+            </div>
+         }
+        //
+        // plaats tabel op het scherm
+        //
+        <script>filterSelection('all')</script>
 
-        }
-    }
+    </div>
 </body>
-</html>
