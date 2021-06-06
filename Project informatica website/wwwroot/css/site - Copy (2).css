@@ -18,10 +18,9 @@ button {
     cursor: pointer;
     width: 10%;
 }
-
-    button:hover {
+ button:hover {
         opacity: 0.8;
-    }
+}
 
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -126,4 +125,11 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
+img{
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
