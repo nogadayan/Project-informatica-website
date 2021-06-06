@@ -19,6 +19,14 @@ h2 {
 h3 {
     color: white;
 }
+/* Center Image on screen */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .box {
     background-image: url('../img/Background Main Page.jpg');
     padding: 390px 200px;
@@ -197,4 +205,5 @@ h3 {
 .row > .column {
     padding: 8px;
 }
+
 
