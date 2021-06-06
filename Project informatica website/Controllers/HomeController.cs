@@ -378,6 +378,13 @@ namespace Project_informatica_website.Controllers
             // return de lijst met movies
             return Movie_actors;
         }
+        [Route("Action_page")]
+        public IActionResult Action_page(string firstname, string lastname, string country, string message)
+        {
+
+
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

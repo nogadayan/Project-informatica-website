@@ -1,8 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
-
 <head>
+    <script>
+        function validateForm() {
+            var x = document.forms["ContactForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (x != "") {
+                alert("name filled out");
+                return true;
+            }
+        }
+    </script>
+
     <h1>@ViewData["Title"]</h1>
     <link rel="stylesheet" href="~/css/Contact.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +41,7 @@
     
     <h1>Contact Form:</h1>
     <div class="container">
-        <form action="/action_page.php">
+        <form name ="ContactForm" action="../Action_page" onsubmit="return validateForm()" method="post">
             <div class="row">
                 <div class="col-25">
                     <label for="fname">First Name</label>
