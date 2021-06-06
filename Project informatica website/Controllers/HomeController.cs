@@ -383,11 +383,8 @@ namespace Project_informatica_website.Controllers
             return View();
         }
         [Route("Contact")]
-        public IActionResult Contact(string firstname, string lastname)
+        public IActionResult Contact()
         {
-            ViewData["firstname"] = firstname;
-            ViewData["lastname"] = lastname;
-
             return View();
         }
 
