@@ -1,3 +1,7 @@
+/* text is zwart*/
+input[type=text] {
+    color: black
+}
 /* style voor text */
 input[type=text], select, textarea {
     width: 100%; /* volle breedte */
@@ -13,7 +17,7 @@ input[type=text], select, textarea {
 /* kleur voor submit knop*/
 input[type=submit] {
     background-color: #04AA6D;
-    color: black;
+    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
