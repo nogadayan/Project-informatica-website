@@ -1,6 +1,7 @@
 /* text is zwart*/
-body{
-    color: black
+body {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
 /* style voor text */
 input[type=text], select, textarea {

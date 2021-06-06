@@ -5,6 +5,7 @@ body {
     background-color: black;
     background-image: url(../img/memphis-mini-dark.png);
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 p {
     color: white;
