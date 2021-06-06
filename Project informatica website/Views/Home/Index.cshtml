@@ -22,18 +22,3 @@
         <h1 class="display-4">Welcome, please Login</h1>
     }
 </div>
-<div class="box">
-    @if (Model != null)
-    {
-        @foreach (Actor m in Model)
-        {
-            <p style="color:white">@m.Actor_ID - @m.Name @m.Birth_Date-</p>
-
-            <img src="~/img/@m.File"
-                 class="Border"
-                 height="259" width="157"
-                 asp-append-version="true" />
-        }
-    }
-
-</div>
