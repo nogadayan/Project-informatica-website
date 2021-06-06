@@ -26,7 +26,8 @@
                 <input type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <!-- Encryption van het wachtwoord via Hashing-->
+                <input type="password" encrypt="sha1" placeholder="Enter Password" name="psw" required>
 
                 <button type="submit">Login</button>
                 <label>
