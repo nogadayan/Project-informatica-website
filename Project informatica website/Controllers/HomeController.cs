@@ -388,15 +388,6 @@ namespace Project_informatica_website.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult Contact(string firstname, string lastname, string country, string message)
-        {
-            ViewData["fisrtname"] = firstname;
-            ViewData["lastname"] = lastname;
-            ViewData["country"] = country;
-            ViewData["massage"] = message;
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
