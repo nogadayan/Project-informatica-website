@@ -2,16 +2,23 @@
     ViewData["Title"] = "Contact";
 }
 <head>
+    <script type="text/javascript" src='~/js/site.js'></script>
     <script>
         function validateForm() {
-            var x = document.forms["ContactForm"]["fname"].value;
+            var x = document.forms["ContactForm"]["firstname"].value;
             if (x == "") {
-                alert("Name must be filled out");
+                alert("First Name must be filled out");
                 return false;
             }
-            if (x != "") {
-                alert("name filled out");
-                return true;
+            var x = document.forms["ContactForm"]["lastname"].value;
+            if (x == "") {
+                alert("Last Name must be filled out");
+                return false;
+            }
+            var x = document.forms["ContactForm"]["message"].value;
+            if (x == "") {
+                alert("Without a message we can't take action!");
+                return false;
             }
         }
     </script>
@@ -41,7 +48,7 @@
     
     <h1>Contact Form:</h1>
     <div class="container">
-        <form name ="ContactForm" action="../Action_page" onsubmit="return validateForm()" method="post">
+        <form name="ContactForm" action="../Action_page" onsubmit="return validateForm()" method="post">
             <div class="row">
                 <div class="col-25">
                     <label for="fname">First Name</label>
