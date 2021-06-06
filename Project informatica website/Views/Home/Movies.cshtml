@@ -8,27 +8,13 @@
     <script type="text/javascript" src='~/js/site.js'></script>
     <link rel="stylesheet" href="~/css/site.css">
 </head>
-<div class="main">
 
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        @if (actors != null)
-        {
-            foreach(var actor in actors)
-                {
-                    <p>@actor.Name @actor.Birth_Date</p>
-                    
-                }
-        }
-
-    </div>
-
-    <h2>Onze films</h2>
+    <h1>Available movies</h1>
 
     <div id="myBtnContainer">
         <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-        <button class="btn" onclick="filterSelection('Kinderen')"> Kinderen</button>
-        <button class="btn" onclick="filterSelection('Volwassenen')"> Volwassenen</button>
+        <button class="btn" onclick="filterSelection('Kinderen')"> Kids</button>
+        <button class="btn" onclick="filterSelection('Volwassenen')"> Adult</button>
         <button class="btn" onclick="filterSelection('Thriller')"> Thriller</button>
     </div>
 
