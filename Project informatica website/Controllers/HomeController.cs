@@ -118,7 +118,7 @@ namespace Project_informatica_website.Controllers
         {
             if (username != null)
             {
-                HttpContext.Session.SetString("User", username);
+                HttpContext.Session.SetString("User", username); // username
                 HttpContext.Session.SetString("password", password);
                 return Redirect("/");
             }
@@ -382,6 +382,18 @@ namespace Project_informatica_website.Controllers
         public IActionResult Action_page(string firstname, string lastname, string country, string message)
         {
 
+
+            return View();
+        }
+        [Route("Action_Login")]
+        public IActionResult Action_Login(string uname, string psw)
+        {
+            if (uname != null)
+            {
+                HttpContext.Session.SetString("User", uname);
+                HttpContext.Session.SetString("password", psw);
+                return Redirect("/");
+            }
 
             return View();
         }
