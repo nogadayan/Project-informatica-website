@@ -1,5 +1,8 @@
 ﻿div.box{
     text-align: center;
     font-size: 30px;
+    border-top: 0px;
 }
-
+div.text-center{
+    margin-bottom:0px;
+}
