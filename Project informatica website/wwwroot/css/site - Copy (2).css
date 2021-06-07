@@ -17,6 +17,7 @@ button {
     border: none;
     cursor: pointer;
     width: 10%;
+    justify-content: center
 }
  button:hover {
         opacity: 0.8;
@@ -133,3 +134,4 @@ img{
     padding-right: 20px;
     padding-left: 20px;
 }
+
