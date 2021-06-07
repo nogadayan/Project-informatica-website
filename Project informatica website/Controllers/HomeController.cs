@@ -388,7 +388,7 @@ namespace Project_informatica_website.Controllers
         [Route("Action_Login")]
         public IActionResult Action_Login(string uname, string psw)
         {
-            if (uname != null)
+            if (psw == "geheim")
             {
                 HttpContext.Session.SetString("User", uname);
                 HttpContext.Session.SetString("password", psw);
