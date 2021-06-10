@@ -381,8 +381,6 @@ namespace Project_informatica_website.Controllers
         [Route("Action_page")]
         public IActionResult Action_page(string firstname, string lastname, string country, string message)
         {
-
-
             return View();
         }
         [Route("Action_Login")]
