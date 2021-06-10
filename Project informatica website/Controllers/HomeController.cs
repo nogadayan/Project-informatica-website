@@ -116,6 +116,8 @@ namespace Project_informatica_website.Controllers
         [Route("Login")]
         public IActionResult Login(string username, string password)
         {
+            var Users = GetUsers();
+
             if (username != null)
             {
                 HttpContext.Session.SetString("User", username); // username
@@ -123,7 +125,7 @@ namespace Project_informatica_website.Controllers
                 return Redirect("/");
             }
 
-            return View();
+            return View(Users);
         }
         [Route("Movies")]
         public IActionResult Movies()
