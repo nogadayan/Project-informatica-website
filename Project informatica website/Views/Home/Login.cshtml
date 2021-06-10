@@ -1,17 +1,26 @@
 ﻿<!DOCTYPE html>
+@using Project_informatica_website.Dbase;
+@model List<Users>
 <html>
 <head>
     <link rel="stylesheet" href="~/css/site.css">
     <link rel="stylesheet" href="~/css/site - Copy (2).css">
 </head>
 <body>
+    @if (Model != null)
+    {
+        @foreach (Users m in Model)
+        {
+            @m.Username @m.Password
+        }
+    }
     <h1>Login:</h1>
     <h2>Please log in to our website, by clicking the button below, for enhancing your user experience! </h2>
     <!-- Button to open the modal login form -->
     <div class="center">
         <button onclick="document.getElementById('id01').style.display='block'">Login</button>
-    
-    <img src="../img/click-it.gif" />
+
+        <img src="../img/click-it.gif" />
     </div>
     <!-- The Modal -->
     <div id="id01" class="modal">
