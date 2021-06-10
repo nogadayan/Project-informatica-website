@@ -462,7 +462,8 @@ namespace Project_informatica_website.Controllers
         [Route("Action_Login")]
         public IActionResult Action_Login(string uname, string psw)
         {
-            string wachtwoord = GetUser(uname);
+            // het wachtwoord zit in de eertse lijst positie
+            string wachtwoord = GetUser(uname).First();
             if (psw == wachtwoord)
             {
                 HttpContext.Session.SetString("User", uname);
