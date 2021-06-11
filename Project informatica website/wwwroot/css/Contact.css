@@ -1,11 +1,12 @@
-/* text is zwart*/
+/* text is wit*/
 body {
-    color: black;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 /* style voor text */
 input[type=text], select, textarea {
     width: 100%; /* volle breedte */
+    color: white;
     padding: 12px; 
     border: 1px solid #ccc; /* grijs */
     border-radius: 4px; /* ronde border */
@@ -26,7 +27,7 @@ input[type=submit] {
 }
 
     /* andere kleur als muis over 'submit' gaat */
-    input[type=submit]:hover {
+input[type=submit]:hover {
         background-color: #45a049;
     }
 
@@ -37,3 +38,18 @@ input[type=submit] {
     padding: 20px;
 }
 
+.contactform .container{ 
+    color: white;
+}
+.contactform label {
+    width: 100px;
+    color: white;
+}
+
+.contactform .contactform {
+    color: white;
+}
+.contactform .field-validation-error {
+    color: red;
+    margin-left: 10px;
+}

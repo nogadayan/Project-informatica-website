@@ -27,7 +27,7 @@
     -->
 
     <link rel="stylesheet" href="~/css/Contact.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 </head>
 <body>
     <h1>@ViewData["Title"]</h1>
@@ -47,8 +47,6 @@
         Vrijdag en zaterdag:<br />
         09:00 - 02:00<br />
     </p>
-    <h1>@ViewData["Title"]</h1>
-
     <form method="post" class="contactform">
         <div class="form-group">
             @Html.LabelFor(m => m.FirstName)
@@ -76,7 +74,7 @@
 
         <input type="submit" value="verstuur" />
     </form>
-
+</body>
     <!-- mooie contact form
     <h1>Contact Form:</h1>
     <div class="container">
@@ -132,5 +130,5 @@
         </form>
     </div>
         -->
-</body>
+
 
