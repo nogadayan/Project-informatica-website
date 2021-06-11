@@ -484,12 +484,12 @@ namespace Project_informatica_website.Controllers
         }
 
         [HttpPost]
-        public IActionResult Contact(string firstname, string lastname, string country, string message)
+        public IActionResult Contact(Person person)
         {
-            ViewData["firstname"] = firstname;
-            ViewData["lastname"] = lastname;
-            ViewData["country"] = country;
-            ViewData["message"] = message;
+            ViewData["firstname"] = person.firstname;
+            ViewData["lastname"] = person.lastname;
+            ViewData["country"] = person.country;
+            ViewData["message"] = person.message;
 
             return View();
         }
