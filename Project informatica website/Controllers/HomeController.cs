@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Http;
 using System.Net;
 using System.IO;
 using System.Text.Json;
+using SendAndStore.Models;
 
 namespace Project_informatica_website.Controllers
 {
