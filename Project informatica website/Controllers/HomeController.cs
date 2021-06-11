@@ -479,8 +479,13 @@ namespace Project_informatica_website.Controllers
         }
 
         [Route("Contact")]
-        public IActionResult Contact()
+        public IActionResult Contact(string firstname, string lastname, string country, string message)
         {
+            ViewData["firstname"] = firstname;
+            ViewData["lastname"] = lastname;
+            ViewData["country"] = country;
+            ViewData["message"] = message;
+
             return View();
         }
 
