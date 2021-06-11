@@ -140,7 +140,7 @@ namespace Project_informatica_website.Controllers
         public List<string> GetNames()
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<string> names = new List<string>();
@@ -175,7 +175,7 @@ namespace Project_informatica_website.Controllers
         public List<Movie> GetMovies(string imdb_tt)
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Movie> Movie = new List<Movie>();
@@ -241,7 +241,7 @@ namespace Project_informatica_website.Controllers
         public List<Actor> GetActors(string imdb_nm)
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de Actors in gaan opslaan
             if (imdb_nm == null)
@@ -321,7 +321,7 @@ namespace Project_informatica_website.Controllers
         public List<Movie_actors> GetMovie_Actors(string imdb_ma)
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Movie_actors> Movie_actors = new List<Movie_actors>();
@@ -383,7 +383,7 @@ namespace Project_informatica_website.Controllers
         public List<Users> GetUsers()
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Users> Users = new List<Users>();
@@ -421,7 +421,7 @@ namespace Project_informatica_website.Controllers
         public List<string> GetUser(string Uname)
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110382;Uid=110382;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<string> Users = new List<string>();
