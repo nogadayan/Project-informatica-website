@@ -1,9 +1,9 @@
-﻿@model SendAndStore.Models.Person
+﻿@model Project_informatica_website.Dbase.Person
 @{
     ViewData["Title"] = "Contact";
 }
 <head>
-    <!-- script nu niet gebruiken
+   
     <script type="text/javascript" src='~/js/site.js'></script>
     <script>
         function validateForm() {
@@ -24,9 +24,9 @@
             }
         }
     </script>
-    -->
+  
 
-    <!-- <link rel="stylesheet" href="~/css/Contact.css" /> -->
+   <link rel="stylesheet" href="~/css/Contact.css" /> 
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 </head>
 <body>
@@ -47,35 +47,37 @@
         Vrijdag en zaterdag:<br />
         09:00 - 02:00<br />
     </p>
+    <!--
     <form method="post" class="contactform">
         <div class="form-group">
-            @Html.LabelFor(m => m.FirstName)
-            @Html.TextBoxFor(m => m.FirstName)
-            @Html.ValidationMessageFor(m => m.FirstName)
+            Html.LabelFor(m => m.FirstName)
+            Html.TextBoxFor(m => m.FirstName)
+            Html.ValidationMessageFor(m => m.FirstName)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(m => m.LastName)
-            @Html.TextBoxFor(m => m.LastName)
-            @Html.ValidationMessageFor(m => m.LastName)
+            Html.LabelFor(m => m.LastName)
+           Html.TextBoxFor(m => m.LastName)
+            Html.ValidationMessageFor(m => m.LastName)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(m => m.Email)
-            @Html.TextBoxFor(m => m.Email)
-            @Html.ValidationMessageFor(m => m.Email)
+            Html.LabelFor(m => m.Email)
+            Html.TextBoxFor(m => m.Email)
+            Html.ValidationMessageFor(m => m.Email)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(m => m.Description)
-            @Html.TextBoxFor(m => m.Description)
-            @Html.ValidationMessageFor(m => m.Description)
+            Html.LabelFor(m => m.Description)
+            Html.TextBoxFor(m => m.Description)
+             eeen apestaartje ervoor!!!!! Html.ValidationMessageFor(m => m.Description)
         </div>
 
         <input type="submit" value="verstuur" />
     </form>
-</body>
-    <!-- mooie contact form
+    -->
+
+
     <h1>Contact Form:</h1>
     <div class="container">
         <form method="post">
@@ -85,7 +87,7 @@
                 </div>
                 <div class="col-75">
                     <input type="text" name="firstname" placeholder="Your first name..">
-                  
+
                 </div>
             </div>
 
@@ -97,7 +99,7 @@
                     <input type="text" name="lastname" placeholder="Your last name..">
                 </div>
             </div>
-          
+
             <div class="row">
                 <div class="col-25">
                     <label for="country">Country</label>
@@ -129,6 +131,6 @@
 
         </form>
     </div>
-        -->
+</body>    
 
 

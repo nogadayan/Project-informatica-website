@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SendAndStore.Models
+namespace Project_informatica_website.Dbase
 {
     public class Person 
     {
