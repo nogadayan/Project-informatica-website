@@ -488,9 +488,13 @@ namespace Project_informatica_website.Controllers
         {
             return View();
         }
-
+        [Route("Contact2")]
+        public IActionResult Contact2()
+        {
+            return View();
+        }
         [HttpPost]
-        public IActionResult Contact(Person person)
+        public IActionResult Contact2(Person person)
         {
             if (ModelState.IsValid)
                 return Redirect("/succes");

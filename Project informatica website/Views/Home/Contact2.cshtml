@@ -1,0 +1,41 @@
+﻿@model Project_informatica_website.Dbase.Person
+@{
+    ViewData["Title"] = "Contact";
+}
+<head>
+    <link rel="stylesheet" href="~/css/Contact2.css" />
+</head>
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" class="contactform">
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName)
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName)
+        @Html.ValidationMessageFor(m => m.LastName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextBoxFor(m => m.Description)
+        @Html.ValidationMessageFor(m => m.Description)
+    </div>
+
+    <input type="submit" value="verstuur" />
+</form>
+@if(Model!= null)
+            {
+                <p>Hello @Model.FirstName @Model.LastName</p>
+            }
+
