@@ -493,12 +493,9 @@ namespace Project_informatica_website.Controllers
         [HttpPost]
         public IActionResult Contact(Person person)
         {
-            ViewData["firstname"] = person.firstname;
-            ViewData["lastname"] = person.lastname;
-            ViewData["country"] = person.country;
-            ViewData["message"] = person.message;
-
-            return View();
+            if (ModelState.IsValid)
+                return Redirect("/succes");
+            return View(person);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
