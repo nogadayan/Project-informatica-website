@@ -3,6 +3,7 @@
     ViewData["Title"] = "Contact";
 }
 <head>
+    <!-- script nu niet gebruiken
     <script type="text/javascript" src='~/js/site.js'></script>
     <script>
         function validateForm() {
@@ -23,7 +24,7 @@
             }
         }
     </script>
-
+    -->
 
     <link rel="stylesheet" href="~/css/Contact.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +47,37 @@
         Vrijdag en zaterdag:<br />
         09:00 - 02:00<br />
     </p>
+    <h1>@ViewData["Title"]</h1>
 
+    <form method="post" class="contactform">
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+            @Html.ValidationMessageFor(m => m.FirstName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName)
+            @Html.ValidationMessageFor(m => m.LastName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Description)
+            @Html.TextBoxFor(m => m.Description)
+            @Html.ValidationMessageFor(m => m.Description)
+        </div>
+
+        <input type="submit" value="verstuur" />
+    </form>
+
+    <!-- mooie contact form
     <h1>Contact Form:</h1>
     <div class="container">
         <form method="post">
@@ -56,9 +87,10 @@
                 </div>
                 <div class="col-75">
                     <input type="text" name="firstname" placeholder="Your first name..">
+                    @Html.ValidationMessageFor(m => m.firstname)
                 </div>
             </div>
-            @Html.ValidationMessageFor(m => m.firstname)
+
             <div class="row">
                 <div class="col-25">
                     <label for="lname">Last Name</label>
@@ -99,5 +131,6 @@
 
         </form>
     </div>
+        -->
 </body>
 

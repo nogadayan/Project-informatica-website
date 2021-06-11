@@ -5,12 +5,12 @@ namespace SendAndStore.Models
     public class Person 
     { 
         [Required]
-        public string firstname { get; set; }
+        public string FirstName { get; set; }
         [Required]
-        public string lastname { get; set; }
+        public string LastName { get; set; }
         [Required]
-        public string country { get; set; }
-        public string message { get; set; }
+        public string Email { get; set; }
+        public string Description { get; set; }
 
     }
 }
